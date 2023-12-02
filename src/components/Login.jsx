@@ -34,41 +34,30 @@ const Login = () => {
   }
 
   const handleCreateAccount = () => {
-    console.log('Creating account for Username:', username)
+    // console.log('Creating account for Username:', username)
   }
 
   return (
     <div className="login">
-      <h2>Venue Admin Login</h2>
-      <label>
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <div style={{ position: 'relative', marginTop: '20px' }}>
-        <label>
-          <input
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <span
-            style={{ position: 'absolute', right: '15px', bottom: '5px' }}
-            onClick={handleTogglePassword}
-          >
-            {showPassword ? (
-              <img width="24px" src={Open} />
-            ) : (
-              <img src={Close} />
-            )}
-          </span>
-        </label>
-      </div>
-      <br />
+      <h1>Venue Admin Login</h1>
+      <input
+        type="text"
+        placeholder="Username"
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        style={{ position: 'relative', marginTop: '20px' }}
+        type={showPassword ? 'text' : 'password'}
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <span
+        style={{ position: 'absolute', transform: 'translate(220px, 20px)' }}
+        onClick={handleTogglePassword}
+      >
+        {showPassword ? <img width="24px" src={Open} /> : <img src={Close} />}
+      </span>
       <button onClick={handleLogin}>Sign in</button>
-      <br />
       <a onClick={handleCreateAccount}>New Registration ?</a>
     </div>
   )

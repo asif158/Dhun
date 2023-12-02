@@ -67,9 +67,7 @@ function PriceHistory({ data }) {
       <HighchartsChart>
         <Chart />
         <Legend layout="horizontal" align="center" verticalAlign="top" />
-        <XAxis categories={a.x_axis}>
-          <XAxis.Title>Months</XAxis.Title>
-        </XAxis>
+        <XAxis categories={a.x_axis}></XAxis>
         <YAxis>
           <ColumnSeries name="Price" data={a.data} key="0" />
         </YAxis>
