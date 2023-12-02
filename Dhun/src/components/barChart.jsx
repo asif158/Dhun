@@ -1,4 +1,5 @@
 import Highcharts from 'highcharts'
+import PropTypes from 'prop-types'
 import {
   HighchartsProvider,
   HighchartsChart,
@@ -49,8 +50,7 @@ const HIGHCHARTS_THEME = {
 Highcharts.theme = HIGHCHARTS_THEME
 Highcharts.setOptions(Highcharts.theme)
 
-function PriceHistory({data}) {
-
+function PriceHistory({ data }) {
   const a = {
     x_axis: ['Custom', 'Category 1', 'Category 2', 'Category 3', 'Category 4'],
     data: [
@@ -63,21 +63,29 @@ function PriceHistory({data}) {
   }
 
   return (
-    
-      <HighchartsProvider Highcharts={Highcharts}>
-        <HighchartsChart>
-          <Chart />
-          <Legend layout="horizontal" align="center" verticalAlign="top" />
-          <XAxis categories={a.x_axis}>
-            <XAxis.Title>Months</XAxis.Title>
-          </XAxis>
-          <YAxis>
-            <ColumnSeries name="Price" data={a.data} key="0" />
-          </YAxis>
-        </HighchartsChart>
-      </HighchartsProvider>
-
+    <HighchartsProvider Highcharts={Highcharts}>
+      <HighchartsChart>
+        <Chart />
+        <Legend layout="horizontal" align="center" verticalAlign="top" />
+        <XAxis categories={a.x_axis}>
+          <XAxis.Title>Months</XAxis.Title>
+        </XAxis>
+        <YAxis>
+          <ColumnSeries name="Price" data={a.data} key="0" />
+        </YAxis>
+      </HighchartsChart>
+    </HighchartsProvider>
   )
+}
+
+PriceHistory.propTypes = {
+  data: PropTypes.shape({
+    category_6: PropTypes.number,
+    category_7: PropTypes.number,
+    category_8: PropTypes.number,
+    category_9: PropTypes.number,
+    category_10: PropTypes.number,
+  }),
 }
 
 export default PriceHistory
