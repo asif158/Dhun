@@ -15,18 +15,16 @@ const Login = () => {
   }
 
   const handleLogin = async () => {
-    const apiUrl = 'https://stg.dhunjam.in/account/admin/login'
-
     // const apiUsername = 'DJ@4'
     // const apiPassword = 'Dhunjam@2023'
 
     try {
-      const response = await axios.post(apiUrl, {
+      const response = await axios.post(`${import.meta.env.VITE_API}/login`, {
         username: username,
         password: password,
       })
 
-      console.log('API Response:', response.data.data.id)
+      // console.log('API Response:', response.data.data.id)
       window.localStorage.setItem('Id', response.data.data.id)
 
       navigate('/admin')
