@@ -60,18 +60,20 @@ button:hover,
 button:active {
   border: 1px solid #f0c3f1;
 }
+.login {
+  height: 100vh;
+}
 .login input {
   width: 70%;
 }
+
 .login,
 .dashboard {
   display: flex;
-  /* background-color: white; */
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100vh;
-  height: 100vh;
   margin: auto;
   text-align: center;
 }

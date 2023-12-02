@@ -107,7 +107,7 @@ const AdminDashboard = () => {
                   height: '50px',
                   border: '1px solid white',
                   borderRadius: '10px',
-                  marginLeft: '10px',
+                  marginLeft: '16px',
                 }}
               >
                 {data?.amount?.category_8}
@@ -121,7 +121,7 @@ const AdminDashboard = () => {
                   height: '50px',
                   border: '1px solid white',
                   borderRadius: '10px',
-                  marginLeft: '10px',
+                  marginLeft: '16px',
                 }}
               >
                 {data?.amount?.category_9}
@@ -135,7 +135,7 @@ const AdminDashboard = () => {
                   height: '50px',
                   border: '1px solid white',
                   borderRadius: '10px',
-                  marginLeft: '10px',
+                  marginLeft: '16px',
                 }}
               >
                 {data?.amount?.category_10}
